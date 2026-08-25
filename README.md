@@ -1,32 +1,73 @@
 # 🛡️ AI-Powered Credit Card Fraud Detection Dashboard
 
-## 📌 Project Overview
+An end-to-end Machine Learning application for detecting potentially fraudulent credit card transactions using **Random Forest** and **Logistic Regression**, with a **FastAPI-powered web dashboard** for prediction and model analysis.
 
-This project is a machine learning-powered credit card fraud detection system with an interactive web dashboard built using **FastAPI, HTML, Bootstrap, JavaScript, and Chart.js**.
+---
 
-The system trains **Random Forest** and **Logistic Regression** classification models, accepts transaction data through CSV upload, generates fraud predictions, and presents model analytics through a web dashboard.
+## 📸 Dashboard Preview
+
+### 📊 Dashboard Overview
+
+The dashboard provides an overview of the uploaded transaction dataset, including total transactions, fraudulent transactions, legitimate transactions, and fraud distribution.
+
+![Dashboard Overview](screenshots/dashboard-overview.png)
+
+---
+
+### 📈 Fraud Trend Analysis
+
+The dashboard visualizes the number of fraudulent transactions across different hours.
+
+![Fraud Trend](screenshots/fraud-trend.png)
+
+---
+
+### 🧠 Feature Importance
+
+The top 10 features contributing to the Random Forest model's predictions are displayed using feature importance scores.
+
+![Feature Importance](screenshots/feature-importance.png)
+
+---
+
+### 🎯 Model Performance & Confusion Matrix
+
+The dashboard displays the Random Forest model's Accuracy, Precision, Recall, F1 Score, and Confusion Matrix.
+
+![Model Performance](screenshots/model-performance.png)
+
+---
+
+### 🤖 Model Comparison & ROC Curve
+
+Random Forest and Logistic Regression are compared using ROC-AUC scores and ROC curves.
+
+![Model Comparison](screenshots/model-comparison.png)
+
+---
 
 ## 🚀 Features
 
-- Batch-wise fraud prediction
-- Supports the Credit Card Fraud Detection dataset with **284,807 transactions**
-- Random Forest fraud classification
-- Logistic Regression model comparison
-- Fraud vs. Legitimate transaction comparison
-- Fraud trend visualization
-- Random Forest feature-importance visualization
-- Accuracy, Precision, Recall and F1-score
-- Confusion Matrix
-- ROC Curve comparison
-- Random Forest vs. Logistic Regression AUC comparison
-- Downloadable prediction results as CSV
-- FastAPI-based backend and web dashboard
+- 📂 CSV-based batch fraud prediction
+- 🌲 Random Forest fraud classification
+- 📈 Logistic Regression model comparison
+- 📊 Fraud vs. legitimate transaction analysis
+- 📉 Fraud trend visualization
+- 🧠 Random Forest feature importance
+- 🎯 Accuracy, Precision, Recall and F1-score
+- 🔲 Confusion Matrix
+- 📈 ROC Curve and ROC-AUC comparison
+- 📥 Downloadable prediction results as CSV
+- ⚡ FastAPI backend
+- 🌐 Interactive web dashboard
+
+---
 
 ## 🧠 Machine Learning Models
 
-### Random Forest Classifier
+### 🌲 Random Forest Classifier
 
-Random Forest is used as the primary prediction model in the dashboard.
+Random Forest is used as the **primary prediction model** in the dashboard.
 
 ```python
 RandomForestClassifier(
@@ -36,9 +77,9 @@ RandomForestClassifier(
 )
 ```
 
-The `class_weight="balanced"` setting gives greater importance to the minority class in the highly imbalanced fraud dataset.
+The `class_weight="balanced"` setting gives greater importance to the minority fraud class in the highly imbalanced dataset.
 
-### Logistic Regression
+### 📈 Logistic Regression
 
 Logistic Regression is trained as a comparison model.
 
@@ -49,21 +90,25 @@ LogisticRegression(
 )
 ```
 
+---
+
 ## 📊 Dataset
 
 **Credit Card Fraud Detection Dataset — Kaggle**
 
-Dataset statistics from the current training run:
+The current training run used:
 
 - **Total transactions:** 284,807
 - **Fraud cases:** 492
 - **Target variable:** `Class`
 
-The dataset is highly imbalanced, so the project evaluates the models using more than accuracy alone.
+The dataset is highly imbalanced, so model evaluation considers metrics beyond accuracy.
+
+---
 
 ## 📈 Model Training Results
 
-The current training script uses an **80/20 train-test split** with stratification.
+The models were trained using an **80/20 stratified train-test split**.
 
 ### Random Forest
 
@@ -80,6 +125,8 @@ The current training script uses an **80/20 train-test split** with stratificati
 | ROC-AUC | **0.9735** |
 
 > In the current training run, Random Forest achieved higher accuracy, while Logistic Regression achieved higher ROC-AUC.
+
+---
 
 ## 🏗️ Project Architecture
 
@@ -117,91 +164,141 @@ The current training script uses an **80/20 train-test split** with stratificati
                   Analytics Dashboard
 ```
 
+---
+
 ## 📁 Project Structure
 
 ```text
-Fraud_Detection_DashBoard/
+AI-Fraud-Detection-Dashboard/
 │
 ├── app.py
 ├── train_model.py
-├── rf_model.pkl
-├── lr_model.pkl
+├── README.md
+├── requirements.txt
 │
-├── dataset/
-│   └── creditcard.csv
+├── screenshots/
+│   ├── dashboard-overview.png
+│   ├── fraud-trend.png
+│   ├── feature-importance.png
+│   ├── model-performance.png
+│   └── model-comparison.png
 │
 ├── templates/
 │   ├── index.html
 │   └── result.html
 │
-├── static/
-│   ├── style.css
-│   └── predictions.csv
-│
-└── README.md
+└── static/
+    └── style.css
 ```
+
+> **Note:** `rf_model.pkl` and `lr_model.pkl` are generated locally by running `python train_model.py`. The original `creditcard.csv` dataset is not included in this repository.
+
+---
 
 ## 🛠️ Tech Stack
 
-- **Python**
-- **Scikit-learn**
-- **Pandas**
-- **NumPy**
-- **Joblib**
-- **FastAPI**
-- **Uvicorn**
-- **Jinja2**
-- **HTML / CSS / JavaScript**
-- **Bootstrap**
-- **Chart.js**
+### Programming
+
+- Python
+
+### Machine Learning
+
+- Scikit-learn
+- Random Forest
+- Logistic Regression
+
+### Data Processing
+
+- Pandas
+- NumPy
+
+### Model Persistence
+
+- Joblib
+
+### Backend
+
+- FastAPI
+- Uvicorn
+- Jinja2
+
+### Frontend
+
+- HTML
+- CSS
+- JavaScript
+- Bootstrap
+- Chart.js
+
+---
 
 ## ⚙️ Installation & Setup
 
-### 1. Open the project directory
+### 1. Clone the repository
 
-```powershell
-cd J:\Fraud_Detection_DashBoard
+```bash
+git clone https://github.com/James-Alwin/AI-Fraud-Detection-Dashboard.git
 ```
 
-### 2. Create a virtual environment
+### 2. Navigate to the project
 
-```powershell
+```bash
+cd AI-Fraud-Detection-Dashboard
+```
+
+### 3. Create a virtual environment
+
+```bash
 python -m venv venv
 ```
 
-### 3. Activate the virtual environment
+### 4. Activate the virtual environment
+
+#### Windows PowerShell
 
 ```powershell
 .\venv\Scripts\activate
 ```
 
-### 4. Install dependencies
+### 5. Install dependencies
 
 ```powershell
-pip install pandas numpy scikit-learn joblib fastapi uvicorn jinja2 python-multipart
+pip install -r requirements.txt
 ```
+
+---
 
 ## 📂 Dataset Setup
 
-Create:
+Create a folder:
 
 ```text
 dataset/
 ```
 
-Place the dataset inside it:
+Place the Kaggle Credit Card Fraud Detection dataset inside it:
 
 ```text
 dataset/creditcard.csv
 ```
 
+The training script expects the dataset at:
+
+```text
+dataset/creditcard.csv
+```
+
+---
+
 ## 🧠 Train the Models
+
+Run:
 
 ```powershell
 python train_model.py
 ```
 
-Training flow:
+### Training Pipeline
 
 ```text
 Load Dataset
@@ -221,35 +318,54 @@ Evaluate Logistic Regression
 Save Models
 ```
 
-After successful training:
+After successful training, the following model files are generated:
 
 ```text
 rf_model.pkl
 lr_model.pkl
 ```
 
+---
+
 ## 🚀 Run the FastAPI Application
+
+After training the models:
 
 ```powershell
 python app.py
 ```
 
-Open:
+The application runs at:
 
 ```text
 http://127.0.0.1:8000
 ```
 
+Open the URL in your browser.
+
+---
+
 ## 📤 Using the Dashboard
 
-1. Open `http://127.0.0.1:8000`.
-2. Upload a compatible transaction CSV file.
-3. FastAPI receives and reads the uploaded file.
-4. Transaction data is processed in batches.
-5. Random Forest generates predictions.
-6. The dashboard displays the analysis.
+1. Open:
 
-The dashboard includes:
+```text
+http://127.0.0.1:8000
+```
+
+2. Upload a compatible transaction CSV file.
+
+3. FastAPI receives the uploaded file.
+
+4. The transaction data is processed in batches.
+
+5. The trained Random Forest model generates predictions.
+
+6. The dashboard displays the prediction results and analytics.
+
+### Dashboard Results
+
+The dashboard provides:
 
 - Total transactions
 - Fraudulent transactions
@@ -264,9 +380,13 @@ The dashboard includes:
 - ROC Curve
 - Model AUC comparison
 
+---
+
 ## 📊 Model Evaluation
 
 ### Accuracy
+
+Measures the percentage of correct predictions among all predictions.
 
 ```text
 Accuracy = (TP + TN) / (TP + TN + FP + FN)
@@ -274,17 +394,23 @@ Accuracy = (TP + TN) / (TP + TN + FP + FN)
 
 ### Precision
 
+Measures how many transactions predicted as fraud were actually fraudulent.
+
 ```text
 Precision = TP / (TP + FP)
 ```
 
 ### Recall
 
+Measures how many actual fraudulent transactions were successfully detected.
+
 ```text
 Recall = TP / (TP + FN)
 ```
 
 ### F1-Score
+
+Provides a balance between precision and recall.
 
 ```text
 F1 = 2 × (Precision × Recall) / (Precision + Recall)
@@ -294,7 +420,11 @@ F1 = 2 × (Precision × Recall) / (Precision + Recall)
 
 ROC-AUC measures the model's ability to distinguish between fraudulent and legitimate transactions across classification thresholds.
 
+---
+
 ## 🔲 Confusion Matrix
+
+The dashboard displays the four classification outcomes:
 
 ```text
                  Actual
@@ -303,10 +433,14 @@ Pred Fraud      TP      FP
 Pred Legit      FN      TN
 ```
 
+Where:
+
 - **TP** — True Positive
 - **TN** — True Negative
 - **FP** — False Positive
 - **FN** — False Negative
+
+---
 
 ## ⚠️ Why Accuracy Alone Is Not Enough
 
@@ -317,9 +451,11 @@ The dataset contains:
 492 fraudulent transactions
 ```
 
-Because fraudulent transactions are a very small minority, accuracy alone may not fully describe fraud-detection performance.
+Fraudulent transactions represent a very small portion of the dataset.
 
-The project therefore also evaluates:
+Therefore, accuracy alone may not fully describe fraud-detection performance.
+
+The project also evaluates:
 
 - Precision
 - Recall
@@ -327,13 +463,18 @@ The project therefore also evaluates:
 - Confusion Matrix
 - ROC-AUC
 
+---
+
 ## 🔌 FastAPI API
 
 The application also provides an API endpoint for individual transaction prediction.
 
-The API returns a predicted class and fraud probability.
+The API accepts transaction feature values and returns:
 
-Example:
+- Predicted class
+- Fraud probability
+
+Example response:
 
 ```json
 {
@@ -342,19 +483,23 @@ Example:
 }
 ```
 
+---
+
 ## 📥 Prediction Output
 
-Prediction results can be downloaded as:
+Prediction results can be downloaded from the dashboard as:
 
 ```text
 predictions.csv
 ```
 
+---
+
 ## 🔮 Future Improvements
 
 - Hyperparameter tuning
 - Cross-validation
-- Additional classification models
+- Additional classification algorithms
 - Feature engineering
 - Advanced class-imbalance techniques
 - Model explainability
@@ -363,6 +508,8 @@ predictions.csv
 - Cloud deployment
 - Real-time transaction monitoring
 - Automated model retraining
+
+---
 
 ## 👨‍💻 Author
 
