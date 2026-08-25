@@ -10,7 +10,7 @@ An end-to-end Machine Learning application for detecting potentially fraudulent 
 
 The dashboard provides an overview of the uploaded transaction dataset, including total transactions, fraudulent transactions, legitimate transactions, and fraud distribution.
 
-![Dashboard Overview](screenshots/dashboard-overview.png)
+![Dashboard Overview](screenshot/dashboard-overview.png)
 
 ---
 
@@ -18,7 +18,7 @@ The dashboard provides an overview of the uploaded transaction dataset, includin
 
 The dashboard visualizes the number of fraudulent transactions across different hours.
 
-![Fraud Trend](screenshots/fraud-trend.png)
+![Fraud Trend](screenshot/fraud-trend.png)
 
 ---
 
@@ -26,7 +26,7 @@ The dashboard visualizes the number of fraudulent transactions across different 
 
 The top 10 features contributing to the Random Forest model's predictions are displayed using feature importance scores.
 
-![Feature Importance](screenshots/feature-importance.png)
+![Feature Importance](screenshot/feature-importance.png)
 
 ---
 
@@ -34,7 +34,7 @@ The top 10 features contributing to the Random Forest model's predictions are di
 
 The dashboard displays the Random Forest model's Accuracy, Precision, Recall, F1 Score, and Confusion Matrix.
 
-![Model Performance](screenshots/model-performance.png)
+![Model Performance](screenshot/model-performance.png)
 
 ---
 
@@ -42,7 +42,7 @@ The dashboard displays the Random Forest model's Accuracy, Precision, Recall, F1
 
 Random Forest and Logistic Regression are compared using ROC-AUC scores and ROC curves.
 
-![Model Comparison](screenshots/model-comparison.png)
+![Model Comparison](screenshot/model-comparison.png)
 
 ---
 
@@ -176,7 +176,7 @@ AI-Fraud-Detection-Dashboard/
 ├── README.md
 ├── requirements.txt
 │
-├── screenshots/
+├── screenshot/
 │   ├── dashboard-overview.png
 │   ├── fraud-trend.png
 │   ├── feature-importance.png
